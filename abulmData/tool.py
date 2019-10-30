@@ -101,7 +101,7 @@ def handle_photo():
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
-        date_str, *info = filename.split("_")
+        date_str, info = filename.split("_")
         info='_'.join(info)
         info, _ = info.split(".")
         date = datetime.strptime(date_str, "%Y-%m-%d")
@@ -130,7 +130,7 @@ def handle_photo():
             list_info[-1]['arr']['type'].append('image')
     list_info.reverse()  # 翻转
     final_dict = {"list": list_info}
-    with open("E://YourBlog/themes/next/source/lib/album/data.json","w") as fp:
+    with open("/Users/mac/developRepository/MyGitBlog/mathews_blog/themes/next/source/lib/album/data.json","w") as fp:
         json.dump(final_dict, fp)
 def cut_photo():
     """裁剪算法
